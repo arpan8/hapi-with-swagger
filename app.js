@@ -1,6 +1,5 @@
 'use strict';
 require('dotenv').config();
-// const { addJwtAuth } = require('./config/authenticate')
 const Inert = require('@hapi/inert');
 const Vision = require('@hapi/vision');
 const HapiSwagger = require('hapi-swagger');
@@ -11,8 +10,6 @@ const Pack = require('./package');
 
 
 const init = async () => {
-    // try{
-    //await addJwtAuth(server);
 
     const swaggerOptions = {
         info:{
@@ -35,7 +32,6 @@ const init = async () => {
     await server.register([
         Inert,
         Vision,
-        //HapiAuthjwt,
         {
             plugin:HapiSwagger,
             options:swaggerOptions
